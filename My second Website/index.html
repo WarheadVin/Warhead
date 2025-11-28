@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lone Cars — Buy Quality Cars</title>
+  <meta name="description" content="Browse Toyota, Honda, BMW models, view images, add to cart and checkout." />
+  <meta name="author" content="Your Name" />
+
+  <meta property="og:title" content="Lone Walker Cars — Buy Quality Cars" />
+  <meta property="og:description" content="Browse and order cars online. Fast checkout and secure payment info." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yourdomain.com/" />
+  <meta property="og:image" content="images/corolla.jpg" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="canonical" href="https://yourdomain.com/" />
+  <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml" />
+
+  <link rel="icon" href="images/favicon.ico" />
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand"><a href="./">Viniah Temoi Cars</a></h1>
+      <nav class="nav">
+        <!-- Search and Filter -->
+        <input id="searchBar" type="text" placeholder="Search by model or brand..." />
+        <select id="brandFilter">
+          <option value="">All Brands</option>
+          <!-- Options populated by script.js -->
+        </select>
+        
+        <!-- Admin Button -->
+        <button id="adminBtn" class="btn btn-outline" title="Admin Login">
+            Admin
+        </button>
+        
+        <!-- Cart Button -->
+        <button id="cartBtn" class="btn btn-primary">
+          Cart (<span id="cartCount">0</span>)
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="container">
+        <h1>Find Your Dream Car</h1>
+        <p>Browse our selection of quality vehicles. Ordering is disabled on Sundays.</p>
+      </div>
+    </div>
+    
+    <div class="container products-section">
+      <div id="productsGrid" class="grid">
+        <!-- Car cards will be rendered here by script.js -->
+        <p>Loading cars...</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Lone Cars — All rights reserved.</p>
+      <p><a href="sitemap.xml">Sitemap</a> | <a href="robots.txt">Robots</a></p>
+    </div>
+  </footer>
+
+  <!-- --------------------- MODALS --------------------- -->
+
+  <!-- Cart Modal -->
+  <div id="cartModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close" id="closeCart">&times;</button>
+      <h3>Your Cart</h3>
+      <div id="cartItems">
+        <!-- Cart items are rendered here by script.js -->
+      </div>
+      <div class="cart-summary">
+        <p>Subtotal: <span class="price">KSh <span id="cartSubTotal">0</span></span></p>
+        <p>Shipping Fee: <span class="price">KSh <span id="cartShippingFee">0</span></span></p>
+        <hr>
+        <p class="total-line">Total: <span class="price">KSh <span id="cartTotal">0</span></span></p>
+      </div>
+      <div class="modal-actions">
+        <button id="checkoutBtn" class="btn btn-primary">Proceed to Checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div id="checkoutModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close" id="closeCheckout">&times;</button>
+      <h3>Checkout</h3>
+      <form id="checkoutForm">
+        <label>Full name <input name="name" required /></label>
+        <label>Phone number <input name="phone" required /></label>
+        <label>Country <input name="country" required /></label>
+        <label>County <input name="county" required /></label>
+        <label>Payment method
+          <select name="payment" required>
+            <option>Mpesa</option>
+            <option>Bank Transfer</option>
+            <option>Cash</option>
+          </select>
+        </label>
+        <button type="submit" class="btn btn-primary">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Admin Login Modal -->
+  <div id="adminLoginModal" class="modal hidden" role="dialog" aria-modal="true">
+    <div class="modal-content">
+      <button class="close" id="closeAdmin">&times;</button>
+      <h3>Admin Login</h3>
+      <form id="adminLoginForm">
+        <label>Password <input type="password" name="password" required /></label>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>
